@@ -1,0 +1,10 @@
+<h2>{{name}}</h2>
+<div *ngIf="selectedStory">
+  <label>Selected Story: </label>{{selectedStory.title}}
+</div>
+<ul class="collection">
+  <li *ngFor="let item of stories" (click)="onSelect(item)" [class.selected]="item === selectedStory">
+    <!--<app-story></app-story>-->
+    <span class="badge">{{item._id}}</span> {{item.title}}
+  </li>
+</ul>
