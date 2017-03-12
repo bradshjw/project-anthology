@@ -1,10 +1,11 @@
-<h2>{{name}}</h2>
-<div *ngIf="selectedStory">
-  <label>Selected Story: </label>{{selectedStory.title}}
-</div>
-<ul class="collection">
-  <li *ngFor="let item of stories" (click)="onSelect(item)" [class.selected]="item === selectedStory">
-    <!--<app-story></app-story>-->
-    <span class="badge">{{item._id}}</span> {{item.title}}
+<ul class="list">
+  <li *ngFor="let item of storyPreviews" (click)="onSelect(item)" class="email-item email-item-unread pure-g">
+    <div class="pure-u-3-4">
+      <h5 class="email-name">{{item.id}}</h5>
+      <!--<h4 class="email-subject">Hello from Toronto</h4>-->
+      <p class="email-desc">
+        {{item.snippet}}
+      </p>
+    </div>
   </li>
 </ul>

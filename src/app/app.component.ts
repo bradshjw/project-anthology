@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { StoryComponent } from './app.story';
-import { CollectionComponent } from './app.collection';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +7,4 @@ import { CollectionComponent } from './app.collection';
 })
 export class AppComponent {
   title = 'Project Anthology';
-  collection: CollectionComponent;
-  selectedStory: StoryComponent;
 }
