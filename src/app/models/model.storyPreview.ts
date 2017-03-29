@@ -1,6 +1,9 @@
 
-export class StoryPreview {
+export interface StoryPreview {
   id: string;
   threadId: string;
-  snippet: string;
+  title: string;
+  excerpt: string;
+  received: Date;
+  read: boolean;
 }

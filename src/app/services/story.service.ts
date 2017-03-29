@@ -4,18 +4,21 @@ import { Story } from '../models/model.story';
 import { StoryPreview } from '../models/model.storyPreview';
 import { CollectionComponent } from '../app.collection';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class StoryService {
   private anthologyServiceUrl = 'http://localhost:3001/api/';
+  private selectedStory: Story;
+  private subjectStory: Subject<Story> = new Subject<Story>();
 
   constructor(private http: Http) { }
 
-  getStories(): Promise<StoryPreview[]> {
-    return this.http.get(this.anthologyServiceUrl + 'mail').toPromise()
-      .then(response => response.json().threads as StoryPreview[])
+  getStories(): Promise<Story[]> {
+    return this.http.get(this.anthologyServiceUrl + 'stories').toPromise()
+      .then(response => response.json() as Story[])
       .catch(this.handleError);
   }
 
@@ -35,5 +38,16 @@ export class StoryService {
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
+  }
+
+  setSelectedStory(story: Story): void {
+    this.selectedStory = story;
+    this.subjectStory.next(story);
+    console.log('Selected story has been set');
+  }
+
+  getSelectedStory(): Observable<Story> {
+    console.log('Returning selected story from service');
+    return this.subjectStory.asObservable();
   }
 }

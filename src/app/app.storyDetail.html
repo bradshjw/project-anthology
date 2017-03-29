@@ -1,4 +1,4 @@
-<div id="main" class="pure-u-1">
+<div *ngIf="story" id="main" class="pure-u-1">
   <div class="email-content">
     <div class="email-content-header pure-g">
       <div class="pure-u-1-2">
@@ -15,8 +15,8 @@
       </div>
     </div>
 
-    <div class="email-content-body">
-      {{story.content}}
+    <div [innerHTML]="story.content" class="email-content-body">
+
     </div>
   </div>
 </div>

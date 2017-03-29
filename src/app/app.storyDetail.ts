@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Story } from './models/model.story';
 import { OnInit } from '@angular/core';
+import { StoryService } from './services/story.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-story',
@@ -8,11 +10,14 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class StoryDetail implements OnInit {
-  @Input()
   story: Story;
 
+  constructor(private service: StoryService) { }
 
   ngOnInit(): void {
-    this.story = null;
+    this.service.getSelectedStory().subscribe((selectedStory: Story) => {
+      console.log('Story retrieved');
+      this.story = selectedStory;
+    });
   }
 }

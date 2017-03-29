@@ -1,10 +1,9 @@
 <ul class="list">
-  <li *ngFor="let item of storyPreviews" (click)="onSelect(item)" class="email-item email-item-unread pure-g">
+  <li *ngFor="let item of storyPreviews" (click)="onSelect(item)" class="email-item pure-g" [ngClass]="{'email-item-unread': (item.read !== true)}">
     <div class="pure-u-3-4">
       <h5 class="email-name">{{item.id}}</h5>
-      <!--<h4 class="email-subject">Hello from Toronto</h4>-->
       <p class="email-desc">
-        {{item.snippet}}
+        {{item.summary}}
       </p>
     </div>
   </li>
