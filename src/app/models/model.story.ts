@@ -4,8 +4,8 @@ export interface Story {
   threadId: string;
   title: string;
   summary: string;
-  content: string;
-  contentType: string;
+  content: Array<any>;
+  // contentType: string;
   author: any;
   audience: Array<any>;
   received: boolean;

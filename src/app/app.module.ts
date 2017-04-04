@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AnthologyComponent } from './anthology.component';
 import { CollectionComponent } from './app.collection';
-import { StoryDetail } from './app.storyDetail';
+import { StoryDetail, SafeHtmlPipe } from './app.storyDetail';
 import { DashboardComponent } from './dashboard.component';
 import { StoryService } from './services/story.service';
 
@@ -17,7 +17,8 @@ import { StoryService } from './services/story.service';
     CollectionComponent,
     AnthologyComponent,
     DashboardComponent,
-    StoryDetail
+    StoryDetail,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

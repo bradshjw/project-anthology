@@ -163,12 +163,17 @@ a {
 }
 
 /* Email Content Styles */
+
 .email-content-header, .email-content-body, .email-content-footer {
     padding: 1em 2em;
-    white-space: pre-wrap;
+    
 }
     .email-content-header {
         border-bottom: 1px solid #ddd;
+    }
+
+    .email-content-body {
+        white-space: pre-wrap;
     }
 
         .email-content-title {

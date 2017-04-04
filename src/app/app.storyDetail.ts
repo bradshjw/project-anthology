@@ -1,8 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Pipe, PipeTransform } from '@angular/core';
 import { Story } from './models/model.story';
 import { OnInit } from '@angular/core';
 import { StoryService } from './services/story.service';
 import { Observable } from 'rxjs/Observable';
+import { DomSanitizer } from '@angular/platform-browser';
+
+@Pipe({ name: 'safeHtml' })
+export class SafeHtmlPipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) { }
+
+  transform(html) {
+    return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
+}
 
 @Component({
   selector: 'app-story',

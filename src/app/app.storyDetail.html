@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div [innerHTML]="story.content" class="email-content-body">
+    <div [innerHTML]="story.content | safeHtml" class="email-content-body">
 
     </div>
   </div>
