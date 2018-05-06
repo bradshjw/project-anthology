@@ -5,10 +5,10 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { AnthologyComponent } from './anthology.component';
-import { CollectionComponent } from './app.collection';
-import { StoryDetail, SafeHtmlPipe } from './app.storyDetail';
-import { DashboardComponent } from './dashboard.component';
+import { AnthologyComponent } from './anthology/anthology.component';
+import { CollectionComponent } from './collection/collection.component';
+import { StoryDetail, SafeHtmlPipe } from './story-detail/story-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { StoryService } from './services/story.service';
 
 @NgModule({

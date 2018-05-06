@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { StoryPreview } from './models/model.storyPreview';
-import { Story } from './models/model.story';
-import { StoryService } from './services/story.service';
+import { StoryPreview } from '../models/story-preview';
+import { Story } from '../models/story';
+import { StoryService } from '../services/story.service';
 
 @Component({
   selector: 'app-story-collection',
-  templateUrl: './app.collection.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './collection.component.html',
+  styleUrls: ['../app.component.css']
 })
 export class CollectionComponent implements OnInit {
   id: number;

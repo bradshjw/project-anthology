@@ -1,7 +1,7 @@
 import { Component, Input, Pipe, PipeTransform } from '@angular/core';
-import { Story } from './models/model.story';
+import { Story } from '../models/story';
 import { OnInit } from '@angular/core';
-import { StoryService } from './services/story.service';
+import { StoryService } from '../services/story.service';
 import { Observable } from 'rxjs/Observable';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -16,8 +16,8 @@ export class SafeHtmlPipe implements PipeTransform {
 
 @Component({
   selector: 'app-story',
-  templateUrl: './app.storyDetail.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './story-detail.component.html',
+  styleUrls: ['../app.component.css']
 })
 export class StoryDetail implements OnInit {
   story: Story;

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, Request, RequestMethod } from '@angular/http';
-import { Story } from '../models/model.story';
-import { StoryPreview } from '../models/model.storyPreview';
-import { CollectionComponent } from '../app.collection';
+import { Story } from '../models/story';
+import { StoryPreview } from '../models/story-preview';
+import { CollectionComponent } from '../collection/collection.component';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 

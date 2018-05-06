@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { CollectionComponent } from './app.collection';
-import { StoryDetail } from './app.storyDetail';
-import { StoryService } from './services/story.service';
+import { CollectionComponent } from '../collection/collection.component';
+import { StoryDetail } from '../story-detail/story-detail.component';
+import { StoryService } from '../services/story.service';
 
 const _collections: CollectionComponent[] = [];
 
 @Component({
-  moduleId: module.id,
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['../app.component.css'],
   providers: [StoryService]
 })
 export class DashboardComponent implements OnInit {
